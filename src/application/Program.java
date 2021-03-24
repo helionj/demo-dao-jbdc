@@ -21,7 +21,12 @@ public class Program {
 		Department department = new Department(2, null);
 		List<Seller> sellers = sellerDao.findByDepartament(department);
 		System.out.println();
-		System.out.println("=== TEST 2: - seller findByDepartament ====");
+		System.out.println("\n=== TEST 2: - seller findByDepartament ====");
+		for(Seller sel: sellers) {
+			System.out.println(sel);
+		}
+		sellers = sellerDao.findAll();
+		System.out.println("\n=== TEST 3: - seller findAll ====");
 		for(Seller sel: sellers) {
 			System.out.println(sel);
 		}
