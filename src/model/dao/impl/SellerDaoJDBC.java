@@ -96,14 +96,13 @@ public class SellerDaoJDBC implements SellerDao{
 	@Override
 	public void deleteById(Integer id) {
 		PreparedStatement st = null;
-		ResultSet rs = null;
 		
 		try {
 			st = conn.prepareStatement(
 				"DELETE FROM seller WHERE Id = ? ");
 			
 			st.setInt(1, id);
-			rs= st.executeQuery();
+			st.executeUpdate();
 			
 			
 		}
@@ -112,7 +111,7 @@ public class SellerDaoJDBC implements SellerDao{
 		}
 		finally {
 			DB.closeStatement(st);
-			DB.closeResultSet(rs);
+			
 		}
 		
 	}
